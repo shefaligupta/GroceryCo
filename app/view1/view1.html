@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header" align="center">Welcome to GroceryCo Kiosk Checkout</div>
+    <div class="card-body">
+        <div class="card-title">Available Products</div>
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Item</td>
+                <td>Quantity</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in items">
+                <td>
+                    {{item.name}} <br>
+                    <span>Max Available Qty:{{item.max_quantity}}</span>
+                </td>
+                <td><input type="number" ng-model="item.quantity"></td>
+                <td>
+                    <button type="button" class="btn btn-outline-primary" ng-click="addItem(item)" ng-disabled="item.quantity >= item.max_quantity">Add</button>
+                    <button type="button" class="btn btn-outline-danger" ng-click="removeItem(item)" ng-disabled="item.quantity == 0">Remove</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="footer" align="center">@GroceryCo</div>

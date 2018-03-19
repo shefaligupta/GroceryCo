@@ -1,0 +1,19 @@
+{
+  "items":[
+    {
+      "name":"Apple(s)",
+      "price":"0.30",
+      "max_quantity":"20"
+    },
+    {
+      "name":"Banana(s)",
+      "price":"0.50",
+      "max_quantity":"10"
+    },
+    {
+      "name":"Tomato(es)",
+      "price":"0.70",
+      "max_quantity":"20"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+/* app css stylesheet */
+
+.footer{
+  position: fixed;
+  bottom:0;
+  margin-left: 50%;
+}
+
+.card-header, .card-title{
+  font-weight: 600;
+}
+
+td span{
+  font-size: 10px;
+}
