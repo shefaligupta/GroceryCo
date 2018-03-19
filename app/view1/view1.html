@@ -16,7 +16,7 @@
                     {{item.name}} <br>
                     <span>Max Available Qty:{{item.max_quantity}}</span>
                 </td>
-                <td><input type="number" ng-model="item.quantity"></td>
+                <td><input min="0" max="{{item.max_quantity}}" type="number" ng-model="item.quantity"></td>
                 <td>
                     <button type="button" class="btn btn-outline-primary" ng-click="addItem(item)" ng-disabled="item.quantity >= item.max_quantity">Add</button>
                     <button type="button" class="btn btn-outline-danger" ng-click="removeItem(item)" ng-disabled="item.quantity == 0">Remove</button>
