@@ -2,18 +2,27 @@
   "items":[
     {
       "name":"Apple(s)",
-      "price":"0.30",
-      "max_quantity":"20"
+      "reg_price":"0.75",
+      "sale_price":"0.65",
+      "max_quantity":20,
+      "quantity":0,
+      "buy_on":"sale"
     },
     {
       "name":"Banana(s)",
-      "price":"0.50",
-      "max_quantity":"10"
+      "reg_price":"0.80",
+      "sale_price":"0.50",
+      "max_quantity":10,
+      "quantity":0,
+      "buy_on":"reg"
     },
     {
       "name":"Tomato(es)",
-      "price":"0.70",
-      "max_quantity":"20"
+      "reg_price":"1.00",
+      "sale_price":"0.80",
+      "max_quantity":20,
+      "quantity":0,
+      "buy_on":"reg"
     }
   ]
 }

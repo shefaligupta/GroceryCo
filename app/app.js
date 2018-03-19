@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.view1'
 ]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+config(['$locationProvider', '$routeProvider',
+    function($locationProvider, $routeProvider) {
   $routeProvider.otherwise({redirectTo: '/cart'});
 }]);

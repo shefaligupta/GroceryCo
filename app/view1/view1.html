@@ -2,7 +2,7 @@
     <div class="card-header" align="center">Welcome to GroceryCo Kiosk Checkout</div>
     <div class="card-body">
         <div class="card-title">Available Products</div>
-        <table class="table">
+        <table class="table" id="products">
             <thead>
             <tr>
                 <td>Item</td>
@@ -16,10 +16,41 @@
                     {{item.name}} <br>
                     <span>Max Available Qty:{{item.max_quantity}}</span>
                 </td>
-                <td><input min="0" max="{{item.max_quantity}}" type="number" ng-model="item.quantity"></td>
+                <td>
+                    <input min="0" limit-to-max max="{{item.max_quantity}}" type="number" ng-model="item.quantity"/>
+                </td>
                 <td>
                     <button type="button" class="btn btn-outline-primary" ng-click="addItem(item)" ng-disabled="item.quantity >= item.max_quantity">Add</button>
                     <button type="button" class="btn btn-outline-danger" ng-click="removeItem(item)" ng-disabled="item.quantity == 0">Remove</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div ng-show="cartItems.length > 0">
+    <div class="card-title" align="center">Cart</div>
+
+        <table class="table" id="cart">
+            <thead>
+            <tr>
+                <td>Product</td>
+                <td>Price</td>
+                <td>Total</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in cartItems">
+                <td>
+                    {{item.name}}
+                </td>
+                <td>
+                    @ ${{item.reg_price}} x {{item.quantity}} <br>
+                    <span ng-if="item.buy_on === 'sale'">Sale: ${{item.sale_price}} x {{item.quantity}}</span>
+                </td>
+                <td>
+                   ${{(item.reg_price * item.quantity).toFixed(2)}} <br>
+                   <span ng-if="item.buy_on === 'sale'">- ${{((item.reg_price - item.sale_price)  * item.quantity).toFixed(2)}}</span>
                 </td>
             </tr>
             </tbody>
