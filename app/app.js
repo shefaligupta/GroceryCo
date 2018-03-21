@@ -15,6 +15,9 @@ shoppingApp.config(['$locationProvider', '$routeProvider',
         otherwise({redirectTo: '/cart'});
 }]);
 
+/**
+ * Prevent user from typing more than maximum allowed quantity in input box.
+ */
 shoppingApp.directive("limitToMax", function() {
     return {
         link: function(scope, element, attributes) {
@@ -32,6 +35,9 @@ shoppingApp.directive("limitToMax", function() {
     };
 });
 
+/**
+ * Factory used for retrieving the inventory items from the JSON file
+ */
 shoppingApp.factory("RetrieveProducts",function($http, $q){
 
     var myStore;
