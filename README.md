@@ -1,5 +1,5 @@
 # GroceryCo
-Test Assignment for Absorb Software
+Test Assignment
 
 I am maintaining the Store for GroceryCo using 4 main object types:
 **a. Inventory Items:** This class represents items in inventory. I used the following data attributes to instantiate
