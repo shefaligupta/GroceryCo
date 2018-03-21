@@ -1,0 +1,59 @@
+{
+  "items":[
+    {
+      "id":"12345",
+      "name":"Apple(s)",
+      "reg_price":"1.25",
+      "max_qty":20,
+      "available_qty":1,
+      "discount":{
+        "promo":"On Sale Price",
+        "min_qty":1,
+        "value":0.1
+      }
+    },
+    {
+      "id":"12346",
+      "name":"Banana(s)",
+      "reg_price":"0.75",
+      "max_qty":15,
+      "available_qty":1,
+      "discount":{
+        "promo":"Group Promo [Buy 3 for $2]",
+        "min_qty":3,
+        "value":0.11
+      }
+    },
+    {
+      "id":"12347",
+      "name":"Potato(es)",
+      "reg_price":"2.00",
+      "max_qty":30,
+      "available_qty":1
+    },
+    {
+      "id":"12348",
+      "name":"Orange(s)",
+      "reg_price":"1.00",
+      "max_qty":10,
+      "available_qty":1,
+      "discount":{
+        "promo":"Buy one Get one free",
+        "min_qty":2,
+        "value":0.5
+      }
+    },
+    {
+      "id":"12349",
+      "name":"Lemon(s)",
+      "reg_price":"1.00",
+      "max_qty":10,
+      "available_qty":1,
+      "discount":{
+        "promo":"Buy one, Get one 50% off",
+        "min_qty":2,
+        "value":0.25
+      }
+    }
+  ]
+}

@@ -11,24 +11,25 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in items">
+            <tr ng-repeat="item in store.items">
                 <td>
                     {{item.name}} <br>
-                    <span>Max Available Qty:{{item.max_quantity}}</span>
+                    <span>Max allowed: {{item.max_qty}}</span> <br>
+                    <span ng-if="item.discount">Promo: {{item.discount.promo}}</span>
                 </td>
                 <td>
-                    <input min="0" limit-to-max max="{{item.max_quantity}}" type="number" ng-model="item.quantity"/>
+                    <input min="1" limit-to-max max="{{item.max_qty}}" type="number" ng-model="item.available_qty"/>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-outline-primary" ng-click="addItem(item)" ng-disabled="item.quantity >= item.max_quantity">Add</button>
-                    <button type="button" class="btn btn-outline-danger" ng-click="removeItem(item)" ng-disabled="item.quantity == 0">Remove</button>
+                    <button type="button" class="btn btn-outline-primary" ng-click="store.cart.addItem(item)" ng-disabled="">Add</button>
+                    <button type="button" class="btn btn-outline-danger" ng-click="store.cart.removeItem(item)" ng-disabled="">Remove</button>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
 
-    <div ng-show="cartItems.length > 0">
+    <div ng-show="store.cart.items.length > 0">
     <div class="card-title" align="center">Cart</div>
 
         <table class="table" id="cart">
@@ -40,18 +41,23 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in cartItems">
+            <tr ng-repeat="item in store.cart.items">
                 <td>
                     {{item.name}}
                 </td>
                 <td>
-                    @ ${{item.reg_price}} x {{item.quantity}} <br>
-                    <span ng-if="item.buy_on === 'sale'">Sale: ${{item.sale_price}} x {{item.quantity}}</span>
+                    @ ${{item.reg_price}} x {{item.available_qty}} <br>
+                    <span ng-if="item.calculateDiscount() > 0">Discount Applied: {{item.discount.promo}}</span>
                 </td>
                 <td>
-                   ${{(item.reg_price * item.quantity).toFixed(2)}} <br>
-                   <span ng-if="item.buy_on === 'sale'">- ${{((item.reg_price - item.sale_price)  * item.quantity).toFixed(2)}}</span>
+                   ${{(item.reg_price * item.available_qty).toFixed(2)}} <br>
+                   <span ng-if="item.calculateDiscount() > 0">- ${{item.calculateDiscount()}}</span>
                 </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Total: {{store.cart.totalValue().toFixed(2)}}</td>
             </tr>
             </tbody>
         </table>
