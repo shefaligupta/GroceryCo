@@ -7,7 +7,7 @@
       "max_qty":20,
       "available_qty":1,
       "discount":{
-        "promo":"On Sale Price",
+        "promo":"10% Off Sale Price",
         "min_qty":1,
         "value":0.1
       }
@@ -21,7 +21,7 @@
       "discount":{
         "promo":"Group Promo [Buy 3 for $2]",
         "min_qty":3,
-        "value":0.11
+        "value":0.1111
       }
     },
     {

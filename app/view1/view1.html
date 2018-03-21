@@ -21,8 +21,8 @@
                     <input min="1" limit-to-max max="{{item.max_qty}}" type="number" ng-model="item.available_qty"/>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-outline-primary" ng-click="store.cart.addItem(item)" ng-disabled="">Add</button>
-                    <button type="button" class="btn btn-outline-danger" ng-click="store.cart.removeItem(item)" ng-disabled="">Remove</button>
+                    <button type="button" class="btn btn-outline-primary" ng-click="store.cart.addItem(item)" ng-disabled="store.cart.keepAdding(item)">Add</button>
+                    <button type="button" class="btn btn-outline-danger" ng-click="store.cart.removeItem(item)" ng-disabled="store.cart.keepRemoving(item)">Remove</button>
                 </td>
             </tr>
             </tbody>
@@ -47,11 +47,11 @@
                 </td>
                 <td>
                     @ ${{item.reg_price}} x {{item.available_qty}} <br>
-                    <span ng-if="item.calculateDiscount() > 0">Discount Applied: {{item.discount.promo}}</span>
+                    <span ng-show="item.calculateDiscount() > 0">Discount Applied: {{item.discount.promo}}</span>
                 </td>
                 <td>
                    ${{(item.reg_price * item.available_qty).toFixed(2)}} <br>
-                   <span ng-if="item.calculateDiscount() > 0">- ${{item.calculateDiscount()}}</span>
+                   <span ng-show="item.calculateDiscount() > 0">- ${{item.calculateDiscount()}}</span>
                 </td>
             </tr>
             <tr>

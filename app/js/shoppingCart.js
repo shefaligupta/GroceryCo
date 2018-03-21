@@ -25,7 +25,6 @@ function ShoppingCart() {
      * @param item
      */
     ShoppingCart.prototype.addItem = function(item) {
-
         var _found = this.ifItemInCart(item);
         if (_found !== -1) {
             this.items[_found].available_qty = Math.min(
@@ -52,7 +51,8 @@ function ShoppingCart() {
     };
 
     /**
-     * Calculate the total cart value = amount payable by user (subtracting the discount).
+     * Calculate the total cart value = amount payable by
+     * user (subtracting the discount).
      * @return {number}
      */
     ShoppingCart.prototype.totalValue = function() {
@@ -60,7 +60,26 @@ function ShoppingCart() {
         for (var i in this.items) {
             _val += this.items[i].salePrice();
         }
-        console.log(_val);
         return _val;
+    };
+
+    /**
+     * Enable/Disable add button.
+     * @param item
+     * @returns {boolean}
+     */
+    ShoppingCart.prototype.keepAdding = function (item) {
+        var _found = this.ifItemInCart(item);
+        return _found > -1 && this.items[_found].available_qty >= item.max_qty;
+    };
+
+    /**
+     * Enable/Disable Remove button.
+     * @param item
+     * @returns {boolean}
+     */
+    ShoppingCart.prototype.keepRemoving = function (item) {
+        var _found = this.ifItemInCart(item);
+        return !(_found > -1 && this.items[_found].available_qty >= 0);
     };
 }

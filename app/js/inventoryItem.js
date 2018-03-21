@@ -25,8 +25,9 @@ function CartItem(item) {
     // Adding instance methods on the fly.
 
     /**
-     * This function calculates discount upto to two decimal places on an item based on its qty added in the cart.
-     * @return {string}
+     * This function calculates discount up to two decimal places
+     * on an item based on its qty added in the cart.
+     * @return {float}
      */
     cItem.calculateDiscount = function() {
         var disc = 0;
