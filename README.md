@@ -1,5 +1,5 @@
 # GroceryCo
-Test Assignment for Absorb Software
+Test Assignment
 
 I am maintaining the Shopping Cart for GroceryCo using 3 main classes:
 a. Inventory Item Class: This class represent each item in inventory. I used the following data attributes to represent
