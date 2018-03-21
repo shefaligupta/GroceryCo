@@ -35,7 +35,7 @@ becomes 2 and discount % = 50% of total value.
 Total Cart value is aggregrated using sale Price of each item in cart retrieved using = Total Price of items added - Discount applied.
 
 
-###Project Setup
+## Project Setup
 Once cloned, run npm install under project directory.
 Use: npm run dev for serving the application locally on localhost:8000
 
