@@ -1,5 +1,9 @@
 # GroceryCo
-Test Assignment
+Test Assignment based on the assignment provided in this pdf file:
+<object data="https://github.com/shefaligupta/GroceryCo/blob/master/FrontEnd_CodingExercise_v1.1.0.pdf" type="application/pdf" width="700px" height="700px">
+    <a href="https://github.com/shefaligupta/GroceryCo/blob/master/FrontEnd_CodingExercise_v1.1.0.pdf">View PDF</a>
+    </embed>
+</object>
 
 I am maintaining the Store for GroceryCo using 4 main object types:
 **a. Inventory Items:** This class represents items in inventory. I used the following data attributes to instantiate
